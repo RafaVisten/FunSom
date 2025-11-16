@@ -1,5 +1,5 @@
 import * as Tone from 'tone';
-import { synth } from './synth.js';
+import { synth, playNote } from './synth.js';
 
 /**
  * Melodies Module
@@ -14,9 +14,9 @@ import { synth } from './synth.js';
 export function playSequence(notes, tempo = 120) {
     const now = Tone.now();
     const beatDuration = (60 / tempo) * 0.5; // 8th note duration
-    
+
     notes.forEach((note, index) => {
-        synth.triggerAttackRelease(note, '8n', now + index * beatDuration);
+        playNote(note, '8n', now + index * beatDuration);
     });
 }
 

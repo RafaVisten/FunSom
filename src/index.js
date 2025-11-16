@@ -5,15 +5,19 @@
  */
 
 import * as Tone from 'tone';
-import { initApp, onScaleClick, onToneClick, onStopClick, onOscSelectChange, onAmpLFOChange } from './app.js';
+import { initApp, onScaleClick, onToneClick, onStopClick, onOscSelectChange, onAmpLFOApply } from './app.js';
+import { onMasterVolChange } from './app.js';
 import './styles/style.css';
 
 // DOM Elements
+
+const masterVolSlider = document.getElementById('masterVol');
 const scaleBtn = document.getElementById('scaleBtn');
 const stopBtn = document.getElementById('stopBtn');
 const toneBtn = document.getElementById('toneBtn');
 const oscSelect = document.getElementById('oscSelect');
 const ampLFOSelect = document.getElementById('ampLFOSelect');
+const applyAmpBtn = document.getElementById('applyAmpBtn');
 
 // Initialize application
 async function init() {
@@ -47,9 +51,14 @@ function setupEventListeners() {
         console.log(`Oscillator type changed to: ${oscSelect.value}`);
     });
 
-    ampLFOSelect.addEventListener('change', () => {
-        onAmpLFOChange();
+    applyAmpBtn.addEventListener('click', () => {
+        onAmpLFOApply();
         console.log(`Amplitude LFO changed to: ${ampLFOSelect.value}`);
+    });
+
+    masterVolSlider.addEventListener('input', () => {
+        onMasterVolChange();
+        console.log(`Master volume changed to: ${masterVolSlider.value} dB`);
     });
 }
 

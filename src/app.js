@@ -4,7 +4,7 @@
  * Integrates all modules and coordinates sound playback
  */
 
-import { stopSynth, playNote, setOscillatorType, setAmplitudeLFO } from './modules/synth.js';
+import { stopSynth, playNote, setOscillatorType, setAmplitudeLFO, setMasterVolume } from './modules/synth.js';
 
 import { playCMajorScale } from './modules/melodies.js';
 
@@ -33,11 +33,24 @@ export function onOscSelectChange() {
     setOscillatorType(value);
 }
 
-export function onAmpLFOChange() {
+export function onAmpLFOApply() {
     const selectElement = document.getElementById('ampLFOSelect');
+    const paramsInput = document.getElementById('params');
+    let params = {};
+    try {
+        params = JSON.parse(paramsInput.value);
+        console.log('Amplitude LFO params properly parsed');
+    } catch (e) {
+        console.error('Invalid JSON in LFO parameters input');
+    }
     const value = selectElement.value;
-    if (value === 'none') setAmplitudeLFO('none');
-    else if (value === 'sine') setAmplitudeLFO('sine');
+    setAmplitudeLFO(value, params);
+}
+
+export function onMasterVolChange() {
+    const sliderElement = document.getElementById('masterVol');
+    const value = parseFloat(sliderElement.value);
+    setMasterVolume(value);
 }
 
 // Export all modules for easy access
