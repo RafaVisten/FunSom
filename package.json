@@ -1,0 +1,20 @@
+{
+  "name": "funsom",
+  "version": "1.0.0",
+  "description": "uma maneira ludica de aprender matematica e sound design",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tone": "^15.1.22"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}

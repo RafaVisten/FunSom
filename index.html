@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FunSom - Learning Math & Sound Design</title>
+</head>
+<body>
+    <div class="container">
+        <h1>FunSom</h1>
+        <p class="subtitle">Uma maneira ludica de aprender matematica e sound design!</p>
+        
+        <h2> Test synth </h2>
+        <div class="controls">
+            <button class="btn" id="scaleBtn">Scale</button>
+            <button class="btn" id="toneBtn">Tone</button>
+            <button class="btn" id="stopBtn">Stop</button>
+        </div>
+
+        <h2> Change synth </h2>
+        <div class="controls">
+            <div class="sel">
+                <p class="subtitle"> Oscillator type </p>
+                <select id="oscSelect" name="Oscillator">
+                    <option value="sine">Sine</option>
+                    <option value="square">Square</option>
+                    <option value="sawtooth">Sawtooth</option>
+                    <option value="triangle">Triangle</option>
+                </select>          
+            </div>
+
+            <div class="sel">
+                <p class="subtitle"> Amplitude auto </p>
+                <select id="ampLFOSelect" name="Amp LFO">
+                    <option value="none">None</option>
+                    <option value="sine">Sine</option>
+                </select>   
+            </div>
+
+        </div>
+        
+    </div>
+
+    <script type="module" src="./src/index.js"></script>
+</body>
+</html>

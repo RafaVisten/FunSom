@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui;
+    background: linear-gradient(135deg, #292e46 0%, #420085 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: rgba(102, 102, 102, 0.267);
+    border-radius: 24px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    padding: 40px;
+    /* max-width: 600px; */
+    width: 30%;
+}
+
+h1 {
+    color: #e2e2e2;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+h2 {
+    color: #b8b8b8;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.subtitle {
+    color: #bebebe;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.controls {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    justify-content: center;
+    padding: 10px;
+}
+
+.sel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+button {
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    flex: 1;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.btn {
+    background: rgba(102, 102, 102, 0.267);;
+    color: rgb(194, 194, 194);
+    border-radius: 12px;
+    display: inline;
+    /* border-color: rgb(194, 194, 194);
+    border-width: 4px;
+    border-style: solid; */
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, #6b0f5f 0%, #5d03b8 100%);
+    color: white;
+}
+
+select {
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    flex: 1;
+    background: rgba(102, 102, 102, 0.267);
+    color: rgb(194, 194, 194);
+    padding-right: 40px;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='rgb(194, 194, 194)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+    appearance: none;
+}
+
+/*
+Source - https://stackoverflow.com/a
+Posted by Sphvn, modified by community. See post 'Timeline' for change history
+Retrieved 2025-11-16, License - CC BY-SA 4.0
+*/
