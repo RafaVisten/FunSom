@@ -1,5 +1,5 @@
 import * as Tone from 'tone';
-import { synth, playNote } from './synth.js';
+import { synth, resetModulation, ampEnv } from './synth.js';
 
 /**
  * Melodies Module
@@ -13,12 +13,16 @@ import { synth, playNote } from './synth.js';
  */
 export function playSequence(notes, tempo = 120) {
     const now = Tone.now();
-    const beatDuration = (60 / tempo) * 0.5; // 8th note duration
+    const beat = (60 / tempo) * 0.5; // 8th note
 
-    notes.forEach((note, index) => {
-        playNote(note, '8n', now + index * beatDuration);
+    resetModulation();
+
+    notes.forEach((note, i) => {
+        synth.triggerAttackRelease(note, "8n", now + i * beat);
+        ampEnv.triggerAttackRelease("4n", now + i * beat);
     });
 }
+
 
 /**
  * Play C major scale
