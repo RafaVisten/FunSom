@@ -4,12 +4,11 @@ import * as Tone from 'tone';
 import { synth, resetModulation, ampEnv } from './synth.js';
 
 /**
- * Play a sequence of notes
- * @param {Array<string>} notes - Array of notes to play
- * @param {number} tempo - Tempo in BPM (default: 120)
+ * @param {Array<string>} notes - Array of notes to play, eg. ['C4', 'D4', 'E4', 'F4', 'G4', 'A4', 'B4', 'C5']
  */
-export function playSequence(notes, tempo = 120) {
+export function playSequence(notes) {
     const now = Tone.now();
+    const tempo = 120;
     const beat = (60 / tempo) * 0.5; // 8th note
 
     resetModulation();
@@ -20,6 +19,7 @@ export function playSequence(notes, tempo = 120) {
     });
 }
 
+// #region Test sequences
 
 export function playCMajorScale() {
     const cMajorScale = ['C4', 'D4', 'E4', 'F4', 'G4', 'A4', 'B4', 'C5'];
@@ -36,8 +36,5 @@ export function playPentatonicScale() {
     playSequence(pentatonic, 120);
 }
 
-export const melodies = {
-    cMajorScale: playCMajorScale,
-    aMinorArpeggio: playAMinorArpeggio,
-    pentatonic: playPentatonicScale
-};
+// #endregion
+

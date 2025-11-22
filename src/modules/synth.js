@@ -3,6 +3,8 @@ import * as Tone from 'tone';
 let currentModulation = null;
 const ENV_DURATION = "4n";
 
+// #region Initialize synth
+
 export const synth = new Tone.Synth({
     oscillator: { type: "triangle" },
     envelope: { attack: 0.005, decay: 0.1, sustain: 0.3, release: 1 }
@@ -16,6 +18,15 @@ export const ampEnv = new Tone.AmplitudeEnvelope({
 });
 
 synth.connect(ampEnv).toDestination();
+
+// #endregion
+
+// #region Control synth
+
+// TODO - add to different file
+export function setMasterVolume(db) {
+    Tone.Master.volume.value = Math.min(db, -1);
+}
 
 export function playNote(note, duration = "4n", time = Tone.now()) {
     resetModulation(); 
@@ -35,10 +46,6 @@ export function setOscillatorType(type) {
 
 export function updateEnvelope(env) {
     Object.assign(synth.envelope, env);
-}
-
-export function setMasterVolume(db) {
-    Tone.Master.volume.value = Math.min(db, -1);
 }
 
 export function resetModulation() {
@@ -61,6 +68,10 @@ export function resetModulation() {
         );
     }
 }
+
+// #endregion
+
+// #region Modulations
 
 export function setAmplitudeLFO(func, params = {}) {
 
@@ -139,3 +150,5 @@ export function setAmplitudeLFO(func, params = {}) {
         }
     };
 }
+
+// #endregion

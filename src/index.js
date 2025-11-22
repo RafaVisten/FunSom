@@ -1,7 +1,5 @@
 // Entry Point
 
-// #region Initialize
-
 import * as Tone from 'tone';
 import { initApp, onScaleClick, onToneClick, onStopClick, onOscSelectChange, onAmpLFOApply } from './app.js';
 import { onMasterVolChange } from './app.js';
@@ -12,8 +10,6 @@ async function init() {
     setupEventListeners();
     console.log('FunSom initialized');
 }
-
-// #endregion
 
 // #region DOM elements
 

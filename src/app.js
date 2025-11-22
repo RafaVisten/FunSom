@@ -1,15 +1,11 @@
 // Main app logic - integrates all modules
 
-// #region Initialize
-
 import { stopSynth, playNote, setOscillatorType, setAmplitudeLFO, setMasterVolume } from './modules/synth.js';
 import { playCMajorScale } from './modules/sequences.js';
 
 export async function initApp() {
     console.log('Initializing...');
 }
-
-// #endregion
 
 // #region Create event handlers
 
@@ -53,12 +49,8 @@ export function onMasterVolChange() {
 
 // #endregion
 
-// #region Export modules
-
+// Export modules
 export * from './modules/synth.js';
 export * from './modules/effects.js';
 export * from './modules/sequences.js';
-export * from './utils/audioHelper.js';
-export * from './utils/noteUtils.js';
 
-// #endregion
