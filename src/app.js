@@ -1,19 +1,13 @@
-/**
- * FunSom App - Main Application Logic
- * 
- * Integrates all modules and coordinates sound playback
- */
+// Main app logic - integrates all modules
 
 import { stopSynth, playNote, setOscillatorType, setAmplitudeLFO, setMasterVolume } from './modules/synth.js';
+import { playCMajorScale } from './modules/sequences.js';
 
-import { playCMajorScale } from './modules/melodies.js';
-
-/**
- * Initialize the app
- */
 export async function initApp() {
-    console.log('🎵 FunSom initialized');
+    console.log('Initializing...');
 }
+
+// #region Create event handlers
 
 export function onScaleClick() {
     playCMajorScale();
@@ -53,10 +47,10 @@ export function onMasterVolChange() {
     setMasterVolume(value);
 }
 
-// Export all modules for easy access
+// #endregion
+
+// Export modules
 export * from './modules/synth.js';
 export * from './modules/effects.js';
-export * from './modules/melodies.js';
-export * from './modules/instruments.js';
-export * from './utils/audioHelper.js';
-export * from './utils/noteUtils.js';
+export * from './modules/sequences.js';
+
