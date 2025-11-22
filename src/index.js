@@ -1,15 +1,21 @@
-/**
- * FunSom - Entry Point
- * 
- * This file initializes the application and sets up UI event listeners
- */
+// Entry Point
+
+// #region Initialize
 
 import * as Tone from 'tone';
 import { initApp, onScaleClick, onToneClick, onStopClick, onOscSelectChange, onAmpLFOApply } from './app.js';
 import { onMasterVolChange } from './app.js';
 import './styles/style.css';
 
-// DOM Elements
+async function init() {
+    await initApp();
+    setupEventListeners();
+    console.log('FunSom initialized');
+}
+
+// #endregion
+
+// #region DOM elements
 
 const masterVolSlider = document.getElementById('masterVol');
 const scaleBtn = document.getElementById('scaleBtn');
@@ -19,16 +25,10 @@ const oscSelect = document.getElementById('oscSelect');
 const ampLFOSelect = document.getElementById('ampLFOSelect');
 const applyAmpBtn = document.getElementById('applyAmpBtn');
 
-// Initialize application
-async function init() {
-    await initApp();
-    setupEventListeners();
-    console.log('🎵 FunSom loaded!');
-}
+// #endregion
 
-/**
- * Setup button click event listeners
- */
+// #region Bind event listeners
+
 function setupEventListeners() {
     scaleBtn.addEventListener('click', async () => {
         // Ensure audio context is started
@@ -61,6 +61,8 @@ function setupEventListeners() {
         console.log(`Master volume changed to: ${masterVolSlider.value} dB`);
     });
 }
+
+// #endregion
 
 // Start the app when DOM is ready
 if (document.readyState === 'loading') {

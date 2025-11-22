@@ -1,10 +1,7 @@
+// Define and manage note sequences
+
 import * as Tone from 'tone';
 import { synth, resetModulation, ampEnv } from './synth.js';
-
-/**
- * Melodies Module
- * Pre-made melody sequences and melody playback utilities
- */
 
 /**
  * Play a sequence of notes
@@ -24,31 +21,21 @@ export function playSequence(notes, tempo = 120) {
 }
 
 
-/**
- * Play C major scale
- */
 export function playCMajorScale() {
     const cMajorScale = ['C4', 'D4', 'E4', 'F4', 'G4', 'A4', 'B4', 'C5'];
     playSequence(cMajorScale, 120);
 }
 
-/**
- * Play A minor arpeggio
- */
 export function playAMinorArpeggio() {
     const aMinorArpeggio = ['A3', 'C4', 'E4', 'A4', 'E4', 'C4'];
     playSequence(aMinorArpeggio, 100);
 }
 
-/**
- * Play pentatonic scale
- */
 export function playPentatonicScale() {
     const pentatonic = ['C4', 'D4', 'E4', 'G4', 'A4', 'C5'];
     playSequence(pentatonic, 120);
 }
 
-// Collection of melodies
 export const melodies = {
     cMajorScale: playCMajorScale,
     aMinorArpeggio: playAMinorArpeggio,
