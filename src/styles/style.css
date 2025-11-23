@@ -5,6 +5,7 @@
 }
 
 body {
+    padding-top: 80px; 
     font-family: system-ui;
     background: linear-gradient(135deg, #292e46 0%, #420085 100%);
     min-height: 100vh;
@@ -14,6 +15,61 @@ body {
     padding: 20px;
 }
 
+/* Header */
+
+.header-bar {
+    position: fixed;            
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;               
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+    padding: 0 1.5rem;
+    z-index: 1000;
+}
+
+.tab-bar {
+    position: absolute;
+    left: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;      
+    gap: 0.5rem;        
+}
+
+.tab-btn {
+    background: rgba(102, 102, 102, 0.267);
+    color: rgb(194, 194, 194);
+    border-radius: 12px;
+    padding: 0.5rem 1.2rem;
+    font-size: 1rem;
+    transition: background 0.2s, color 0.2s;
+    outline: none;
+    font-weight: 600;
+}
+
+.tab-btn.active {
+    background: linear-gradient(135deg, #6b0f5f 0%, #5d03b8 100%);
+    color: #fff;
+    border-bottom: 2px solid #5d03b8;
+}
+
+.tab-content {
+    margin-top: 3rem;
+}
+
+.app-title {
+  color: #8d8d8d;
+  font-size: 2rem;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Containers */
+
 .container {
     background: rgba(102, 102, 102, 0.267);
     border-radius: 24px;
@@ -21,6 +77,18 @@ body {
     padding: 40px;
     max-width: 600px;
 }
+
+.controls {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    justify-content: center;
+    padding: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px
+}
+
+/* Text */
 
 h1 {
     color: #e2e2e2;
@@ -31,7 +99,6 @@ h1 {
 h2 {
     color: #b8b8b8;
     margin-bottom: 10px;
-    margin-top: 20px;
     margin-left: 20px;
 }
 
@@ -42,18 +109,7 @@ h2 {
     font-size: 14px;
 }
 
-.controls + .subtitle {
-    margin-top: 20px;
-}
-
-.controls {
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
-    justify-content: center;
-    padding: 10px;
-    flex-wrap: wrap;
-}
+/* Selectors */
 
 .sel {
     flex: 1;
@@ -66,6 +122,27 @@ h2 {
 .sel.full-width {
     flex-basis: 100%;
 }
+
+select {
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    flex: 1;
+    background: rgba(102, 102, 102, 0.267);
+    color: rgb(194, 194, 194);
+    padding-right: 40px;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='rgb(194, 194, 194)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+    appearance: none;
+}
+
+/* Buttons */
 
 button {
     padding: 12px 20px;
@@ -102,24 +179,7 @@ button:active {
     color: white;
 }
 
-select {
-    padding: 12px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: 600;
-    flex: 1;
-    background: rgba(102, 102, 102, 0.267);
-    color: rgb(194, 194, 194);
-    padding-right: 40px;
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='rgb(194, 194, 194)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-    background-size: 20px;
-    appearance: none;
-}
+/* Inputs */
 
 .range {
     width: 90%;
@@ -179,10 +239,3 @@ select {
     background: linear-gradient(135deg, #6b0f5f 0%, #5d03b8 100%);
     color: white;
 }
-
-
-/*
-Source - https://stackoverflow.com/a
-Posted by Sphvn, modified by community. See post 'Timeline' for change history
-Retrieved 2025-11-16, License - CC BY-SA 4.0
-*/

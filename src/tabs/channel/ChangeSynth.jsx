@@ -1,5 +1,19 @@
 import React from 'react';
-import { onOscSelectChange, onMasterVolChange } from '../App';
+import { setOscillatorType, setMasterVolume } from '@/modules/synth.js';
+
+export function onOscSelectChange() {
+    const selectElement = document.getElementById('oscSelect');
+    const value = selectElement.value;
+    setOscillatorType(value);
+    console.log(`Oscillator type changed to: ${oscSelect.value}`);
+}
+
+export function onMasterVolChange() {
+    const sliderElement = document.getElementById('masterVol');
+    const value = parseFloat(sliderElement.value);
+    setMasterVolume(value);
+    console.log(`Master volume changed to: ${sliderElement.value} dB`);
+}
 
 export default function ChangeSynth() {
     return (
