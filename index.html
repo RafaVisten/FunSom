@@ -7,56 +7,9 @@
     <title>FunSom</title>
 </head>
 <body>
-    <div class="container">
-        <h1>FunSom</h1>
-        <p class="subtitle">Uma maneira ludica de aprender matematica e sound design!</p>
-        
-        <h2> Test synth </h2>
-        
-        <div class="controls">  
-            <button class="btn" id="scaleBtn">Scale</button>
-            <button class="btn" id="toneBtn">Tone</button>
-            <button class="btn" id="stopBtn">Stop</button>
-        </div>
-
-        <h2> Change synth </h2>
-        <div class="controls">
-            <div class="sel full-width">
-                <p class="subtitle"> Volume </p>
-                <input type="range" id="masterVol" class="range" min="-20" max="0" value="-5">
-            </div>
-            <div class="sel">
-                <p class="subtitle"> Oscillator type </p>
-                <select id="oscSelect" name="Oscillator">
-                    <option value="sine">Sine</option>
-                    <option value="square">Square</option>
-                    <option value="sawtooth">Sawtooth</option>
-                    <option value="triangle">Triangle</option>
-                </select>          
-            </div>
-        </div>
-
-        <h2> Amplitude Automation </h2>
-        <div class="controls">
-            <div class="sel">
-                <select id="ampLFOSelect" name="Amp LFO">
-                    <option value="none">None</option>
-                    <option value="sine">Sine</option>
-                    <option value="affine">Affine</option>
-                    <option value="quadratic">Quadratic</option>
-                </select>   
-            </div>
-            <button class="btn" id="applyAmpBtn">Apply</button>   
-
-            <div class="sel full-width">
-                <p class="subtitle"> Parameters </p>
-                <input id="params" class="textbox" type="text" value='{"a":1,"b":0,"c":0,"speed":0.5}'>
-            </div>
-            
-               
-        </div>
+    <div id="root">
     </div>
 
-    <script type="module" src="./src/index.js"></script>
+    <script type="module" src="./src/main.jsx"></script>
 </body>
 </html>
