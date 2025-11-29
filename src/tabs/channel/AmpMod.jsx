@@ -1,21 +1,22 @@
 import React from 'react';
 import { setAmplitudeLFO } from '@/modules/instrumentManager.js';
 
-export function onAmpLFOApply() {
-    const selectElement = document.getElementById('ampLFOSelect');
-    const paramsInput = document.getElementById('params');
-    let params = {};
-    try {
-        params = JSON.parse(paramsInput.value);
-    } catch (e) {
-        console.error('Invalid JSON in LFO parameters input');
-    }
-    const value = selectElement.value;
-    console.log(`Amplitude LFO changed to: ${ampLFOSelect?.value}`);
-    setAmplitudeLFO(value, params);
-}
-
 export default function AmpMod() {
+
+    function onAmpLFOApply() {
+        const selectElement = document.getElementById('ampLFOSelect');
+        const paramsInput = document.getElementById('params');
+        let params = {};
+        try {
+            params = JSON.parse(paramsInput.value);
+        } catch (e) {
+            console.error('Invalid JSON in LFO parameters input');
+        }
+        const value = selectElement.value;
+        console.log(`Amplitude LFO changed to: ${ampLFOSelect?.value}`);
+        setAmplitudeLFO(value, params);
+    }   
+
     return (
         <>
         <h2> Amplitude Automation </h2>

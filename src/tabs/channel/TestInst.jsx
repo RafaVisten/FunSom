@@ -1,22 +1,23 @@
 import React from 'react';
 import { stop, playNote, playCMajorScale } from '@/modules/instrumentManager.js';
 
-export function onScaleClick() {
-    playCMajorScale();
-}
+export default function TestInst() {
 
-export function onToneClick() {
-    playNote('C4', '1n');
-}
+    function onScaleClick() {
+        playCMajorScale();
+    }
 
-export function onStopClick() {
-    stop();
-}
+    function onToneClick() {
+        playNote('C4', '1n');
+    }
 
-export default function TestSynth() {
+    function onStopClick() {
+        stop();
+    }
+
     return (
         <>
-        <h2> Test synth </h2>
+        <h2> Test instrument </h2>
         <div className="controls">  
             <button className="btn" id="scaleBtn" onClick={onScaleClick}>Scale</button>
             <button className="btn" id="toneBtn" onClick={onToneClick}>Tone</button>

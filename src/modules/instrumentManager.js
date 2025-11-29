@@ -1,7 +1,25 @@
 import * as synth from "./instruments/synth.js";
 import * as Tone from "tone";
 
-let currentInstrument = synth;
+const instruments = {
+    synth
+};
+
+let currentKey = "synth";
+let currentInstrument = instruments[currentKey];
+
+export function selectInstrument(key) {
+    if (!instruments[key]) {
+        console.warn("Unknown instrument:", key);
+        return;
+    }
+    currentKey = key;
+    currentInstrument = instruments[key];
+}
+
+export function getAvailableInstruments() {
+    return Object.keys(instruments);
+}
 
 export function playNote(...args) {
     return currentInstrument.playNote(...args);
