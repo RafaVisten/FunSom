@@ -1,5 +1,5 @@
 import React from 'react';
-import { setAmplitudeLFO } from '@/modules/synth.js';
+import { setAmplitudeLFO } from '@/modules/instrumentManager.js';
 
 export function onAmpLFOApply() {
     const selectElement = document.getElementById('ampLFOSelect');

@@ -1,6 +1,5 @@
 import React from 'react';
-import { playCMajorScale } from '@/modules/sequences.js';
-import { stopSynth, playNote } from '@/modules/synth.js';
+import { stop, playNote, playCMajorScale } from '@/modules/instrumentManager.js';
 
 export function onScaleClick() {
     playCMajorScale();
@@ -11,7 +10,7 @@ export function onToneClick() {
 }
 
 export function onStopClick() {
-    stopSynth();
+    stop();
 }
 
 export default function TestSynth() {

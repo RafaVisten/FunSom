@@ -5,11 +5,6 @@ import * as Tone from 'tone';
 import Channel from './tabs/Channel.jsx'
 import Example from './tabs/Example.jsx'
 
-// Export modules
-export * from './modules/synth.js';
-export * from './modules/effects.js';
-export * from './modules/sequences.js';
-
 export default function App() {
   useEffect(() => {
     if (Tone.Transport.state === 'suspended') {

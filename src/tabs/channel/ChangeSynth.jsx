@@ -1,5 +1,5 @@
 import React from 'react';
-import { setOscillatorType, setMasterVolume } from '@/modules/synth.js';
+import { setOscillatorType, setVolume } from '@/modules/instrumentManager.js';
 
 export function onOscSelectChange() {
     const selectElement = document.getElementById('oscSelect');
@@ -11,7 +11,7 @@ export function onOscSelectChange() {
 export function onMasterVolChange() {
     const sliderElement = document.getElementById('masterVol');
     const value = parseFloat(sliderElement.value);
-    setMasterVolume(value);
+    setVolume(value);
     console.log(`Master volume changed to: ${sliderElement.value} dB`);
 }
 
